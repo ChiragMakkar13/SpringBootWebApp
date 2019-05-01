@@ -37,7 +37,8 @@ node {
     }
 	 
 		stage('Docker Image Build'){
-	   sh "sudo docker build chiragmakkar13/springbootwebapp ."
+			sh "sudo docker build -t chiragmakkar13/springbootwebapp ."
+	   //sh "sudo docker build chiragmakkar13/springbootwebapp ."
           }
 
     stage('Push Image') {
