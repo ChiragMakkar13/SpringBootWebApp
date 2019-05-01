@@ -37,7 +37,7 @@ node {
     }
 	 
 		stage('Docker Image Build'){
-	   sh "sudo docker build -t chiragmakkar13/springboot:Dockerfile ."
+	   sh "sudo docker build -t chiragmakkar13/springbootwebapp:Dockerfile ."
           }
 
     stage('Push Image') {
@@ -49,9 +49,9 @@ node {
             sh "sudo docker login -u $USER -p $PASS"
         }
 
-        sh "sudo docker tag chiragmakkar13/springboot:latest chiragmakkar13/springboot:$BUILD_NUMBER"
-        sh "sudo docker push chiragmakkar13/springboot:latest"
-        sh "sudo docker push chiragmakkar13/springboot:$BUILD_NUMBER"
+        sh "sudo docker tag chiragmakkar13/springboot:latest chiragmakkar13/springbootwebapp:$BUILD_NUMBER"
+        sh "sudo docker push chiragmakkar13/springbootwebapp:latest"
+        sh "sudo docker push chiragmakkar13/springbootwebapp:$BUILD_NUMBER"
     }
 	
 	
