@@ -7,7 +7,7 @@ node {
     env.JAVA_HOME = "${jdk}"
     
    stage ('Clone') {			
-	git branch: 'master', url: "https://github.com/ChiragMakkar13/SpringBoot-Demo.git"
+	git branch: 'master', url: "https://github.com/ChiragMakkar13/SpringBootWebApp.git"
 		}
 	stage ('Artifactory configuration') {
         mvnHome = tool 'mavenhome'
