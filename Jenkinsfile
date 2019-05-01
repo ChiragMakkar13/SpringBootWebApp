@@ -49,7 +49,7 @@ node {
             sh "sudo docker login -u $USER -p $PASS"
         }
 
-        sh "sudo docker tag chiragmakkar13/springboot:latest chiragmakkar13/springbootwebapp:$BUILD_NUMBER"
+        sh "sudo docker tag chiragmakkar13/springbootwebapp:latest chiragmakkar13/springbootwebapp:$BUILD_NUMBER"
         sh "sudo docker push chiragmakkar13/springbootwebapp:latest"
         sh "sudo docker push chiragmakkar13/springbootwebapp:$BUILD_NUMBER"
     }
