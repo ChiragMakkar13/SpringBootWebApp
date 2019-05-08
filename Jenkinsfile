@@ -63,8 +63,6 @@ node {
    sh 'ssh ubuntu@ec2-54-234-140-106.compute-1.amazonaws.com cd ELKStack' 
    sh 'ssh ubuntu@ec2-54-234-140-106.compute-1.amazonaws.com docker-compose -f docker-compose.yml up -d'
    sh 'ssh ubuntu@ec2-54-234-140-106.compute-1.amazonaws.com docker-compose -f docker-compose.yml ps'	
-        }     
-            
-        }       
+        }    
    }
  }
