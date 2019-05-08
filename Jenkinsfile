@@ -55,7 +55,7 @@ node {
         sh "sudo docker push chiragmakkar13/springbootwebapp:$BUILD_NUMBER"
     }
 	stage('AWS ELKStack') {           
-        sshagent(['ChiragAWS']) {
+        sshagent(['ChiragAWSCOE']) {
     // some block
    sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-234-140-106.compute-1.amazonaws.com '
    sh 'ssh ubuntu@ec2-54-234-140-106.compute-1.amazonaws.com uptime'
