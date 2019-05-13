@@ -60,7 +60,7 @@ node {
    sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com '
    sh 'ssh ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com uptime'
    //  sh 'scp ./hello ubuntu@ec2-13-126-174-183.ap-south-1.compute.amazonaws.com:/home/ubuntu'
-   sh 'ssh ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com cd ELKStack' 
+   sh 'ssh ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com cd ELKStack/ ' 
    sh 'ssh ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com docker-compose -f docker-compose.yml up -d'
    sh 'ssh ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com docker-compose -f docker-compose.yml ps'	
         }    
