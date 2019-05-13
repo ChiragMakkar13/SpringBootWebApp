@@ -53,16 +53,14 @@ node {
         sh "sudo docker tag chiragmakkar13/springbootwebapp:latest chiragmakkar13/springbootwebapp:$BUILD_NUMBER"
         sh "sudo docker push chiragmakkar13/springbootwebapp:latest"
         sh "sudo docker push chiragmakkar13/springbootwebapp:$BUILD_NUMBER"
-    }
-	stage('AWS ELKStack') {           
-        sshagent(['ChiragCEOAWS']) {
-    // some block
-   sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com '
-   sh 'ssh ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com uptime'
-   //  sh 'scp ./hello ubuntu@ec2-13-126-174-183.ap-south-1.compute.amazonaws.com:/home/ubuntu'
-   sh 'ssh ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com cd ELKStack/ ' 
-   sh 'ssh ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com docker-compose -f docker-compose.yml up -d'
-   sh 'ssh ubuntu@ec2-54-92-173-179.compute-1.amazonaws.com docker-compose -f docker-compose.yml ps'	
+    }           
+       
+	stage('AWS ELKStack UP') {           
+       sshagent(['ChiragAzureCLI']) {
+   
+      sh 'ssh -o StrictHostKeyChecking=no chirag@104.209.234.51 '  
+     sh 'ssh chirag@104.209.234.51 sudo docker-compose -f docker-compose.yml up -d '
+     sh 'ssh chirag@104.209.234.51 sudo docker-compose -f docker-compose.yml ps '	
         }    
    }
  }
